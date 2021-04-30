@@ -62,3 +62,10 @@ Then extract a subset of classes from the train, val, and test
 cd ./src/pre_processing
 python extract_class_dataset_csv.py -c 169 24 208
 ```
+
+Then copy the subset of the dataset to the new directory
+
+```bash
+cd ./src/pre_processing
+python copy_dataset_files.py
+```
