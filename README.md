@@ -55,3 +55,10 @@ First extract the class IDs and their label mappings
 cd ./src/pre_processing
 python extract_class_id_label_csv.py -c 169 24 208
 ```
+
+Then extract a subset of classes from the train, val, and test
+
+```bash
+cd ./src/pre_processing
+python extract_class_dataset_csv.py -c 169 24 208
+```
