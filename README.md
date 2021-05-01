@@ -16,7 +16,11 @@
    ```bash
    python -m venv venv
    ```
-2. Install required packages
+2. Activate the environment
+   ```bash
+   venv\Scripts\activate
+   ```
+3. Install required packages
    ```bash
    pip install -r requirements.txt
    ```
