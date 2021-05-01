@@ -71,5 +71,5 @@ Then copy the subset of the dataset to the new directory
 
 ```bash
 cd ./src/pre_processing
-python copy_dataset_files.py
+python copy_dataset_files.py -c 3
 ```

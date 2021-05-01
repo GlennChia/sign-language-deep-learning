@@ -20,6 +20,10 @@ def copy_data(source_dir, video_name, save_dir):
              "{}/{}_{}.mp4".format(save_dir, video_name, video_format))
 
 if __name__ == "__main__":
+  parser = argparse.ArgumentParser()
+  parser.add_argument("-c", "--num_classes", help="number of classes to copy", type=int)
+  args = parser.parse_args()
+  num_classes = args.num_classes
   dataset_details = {
     "train": "train_labels",
     "val": "val_ground_truth",
@@ -27,6 +31,6 @@ if __name__ == "__main__":
   }
   for dataset, dataset_name in dataset_details.items():
     source_dir = "../../data/complete/{}".format(dataset)
-    save_dir = "../../data/3_class/{}".format(dataset)
-    df = pd.read_csv("../../data/3_class/{}.csv".format(dataset_name), names=["video_name", "class_id"])
+    save_dir = "../../data/{}_class/{}".format(num_classes, dataset)
+    df = pd.read_csv("../../data/{}_class/{}.csv".format(num_classes, dataset_name), names=["video_name", "class_id"])
     df.apply(lambda row : copy_data(source_dir, row['video_name'], save_dir), axis = 1)
